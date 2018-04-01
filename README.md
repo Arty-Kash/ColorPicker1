@@ -2,7 +2,7 @@
 
 This is a Xamarin.Forms sample program to pick Color Code from any pixel of a image. Please visit the following site, if you want to know more.
 
-* English: 
+* English: http://fightwithprogramming.blogspot.jp/2018/04/get-color-code-from-image-pixel.html
 * Japanese: 
 
 [Keywords] Xamarin.Forms, 
