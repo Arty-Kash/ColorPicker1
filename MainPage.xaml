@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:ColorPicker" 
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="ColorPicker.MainPage">
+
+    <Grid RowSpacing="0">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Image x:Name="image" Source="testchart.gif" Grid.Row="1"/>
+
+        
+        <!-- Draw a Cross-Hairs to sight the pixel -->
+        <views:SKCanvasView Grid.Row="1" PaintSurface="CrossHairs" 
+                            InputTransparent="true" />
+
+        <!-- Image Canvas -->
+        <views:SKCanvasView x:Name="skCanvasView" Grid.Row="1" PaintSurface="OnCanvasViewPaintSurface" 
+                            InputTransparent="true" SizeChanged="CanvasSizeChanged"/>
+
+        <!-- App Title -->
+        <StackLayout Grid.Row="0" BackgroundColor="Gray" Padding="0,0,0,1" HeightRequest="50">
+            <StackLayout BackgroundColor="White" HeightRequest="50">
+                <Label Text="Color Picker Demo" Grid.Row="0" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Image Scale Slider -->
+        <StackLayout Grid.Row="2" BackgroundColor="White" Padding="20, 0, 20, 0">
+            <Slider x:Name="ScaleSlider" Minimum="0" Maximum="10" ValueChanged="ScaleSliderChanged"/>
+        </StackLayout>
+
+        <!-- Display the Color of the center pixel of the skCanvasView -->
+        <StackLayout Grid.Row="3" BackgroundColor="White" Orientation="Horizontal" Padding="20,5,0,5">
+            <StackLayout BackgroundColor="Gray" WidthRequest="80" HeightRequest="80" Padding="2">
+                <Grid>
+                    <BoxView x:Name="ColorMonitor" WidthRequest="80" HeightRequest="80"/>
+                    <Label x:Name="ColorCode" FontSize="16" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="Red" Text="R: "/>
+                <Label x:Name="Green" Text="G: "/>
+                <Label x:Name="Blue" Text="B: "/>
+            </StackLayout>
+        </StackLayout>
+        
+    </Grid>
+    
+</ContentPage>
