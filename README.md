@@ -5,4 +5,4 @@ This is a Xamarin.Forms sample program to pick Color Code from any pixel of a im
 * English: http://fightwithprogramming.blogspot.jp/2018/04/get-color-code-from-image-pixel.html
 * Japanese: https://wordpress.com/post/fightwithprogramming.wordpress.com/967
 
-[Keywords] Xamarin.Forms, 
+[Keywords] Xamarin.Forms, Image Class, Pan Gesture, Pinch Gesture, SkiaSharp, SKBitmap, SKBitmp.GetPixel, Slider
